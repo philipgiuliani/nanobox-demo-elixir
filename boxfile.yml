@@ -1,0 +1,12 @@
+run.config:
+  engine: elixir
+
+  engine.config:
+    runtime: elixir-1.4
+
+  cache_dirs:
+    - deps
+    - _build
+
+data.db:
+  image: nanobox/postgresql:9.5
