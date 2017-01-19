@@ -1,12 +1,12 @@
 run.config:
   engine: elixir
 
-  engine.config:
-    runtime: elixir-1.4
-
   cache_dirs:
     - deps
     - _build
+
+  extra_steps:
+    - mix archive.install https://github.com/phoenixframework/archives/raw/master/phoenix_new.ez --force
 
 data.db:
   image: nanobox/postgresql:9.5

@@ -13,7 +13,6 @@ config :demo, Demo.Endpoint,
   check_origin: false,
   watchers: []
 
-
 # Watch static and templates for browser reloading.
 config :demo, Demo.Endpoint,
   live_reload: [
@@ -35,8 +34,8 @@ config :phoenix, :stacktrace_depth, 20
 # Configure your database
 config :demo, Demo.Repo,
   adapter: Ecto.Adapters.Postgres,
-  username: "postgres",
-  password: "postgres",
+  username: System.get_env("DATA_DB_USER"),
+  password: System.get_env("DATA_DB_PASS"),
+  hostname: System.get_env("DATA_DB_HOST"),
   database: "demo_dev",
-  hostname: "localhost",
-  pool_size: 10
+  pool_size: 5
