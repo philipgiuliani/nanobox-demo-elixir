@@ -1,0 +1,19 @@
+set +e
+set -x
+
+while true; do
+  bin/demo ping
+  EXIT_CODE=$?
+  if [ $EXIT_CODE -eq 0 ]; then
+    echo "Application is up!"
+    break
+  fi
+done
+
+set -e
+set +x
+
+echo "Running migrations"
+bin/demo rpc Elixir.Release.Tasks create_database
+bin/demo rpc Elixir.Release.Tasks migrate
+echo "Migrations run successfully"

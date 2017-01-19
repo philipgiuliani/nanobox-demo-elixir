@@ -5,6 +5,7 @@
 /_build
 /db
 /deps
+/priv/static
 /*.ez
 
 # Generated on crash by the VM
