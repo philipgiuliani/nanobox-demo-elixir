@@ -1,19 +1,12 @@
-# Demo
+# Deployment
 
-To start your Phoenix app:
+1. Generate a release
+`REPLACE_OS_VARS=true MIX_ENV=prod mix release`
 
-  * Install dependencies with `mix deps.get`
-  * Create and migrate your database with `mix ecto.create && mix ecto.migrate`
-  * Start Phoenix endpoint with `mix phoenix.server`
+2. Add the following evars:
+* `REPLACE_OS_VARS=true`
+* `SECRET=some_random_string`
+* `PORT=8080`
 
-Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
-
-Ready to run in production? Please [check our deployment guides](http://www.phoenixframework.org/docs/deployment).
-
-## Learn more
-
-  * Official website: http://www.phoenixframework.org/
-  * Guides: http://phoenixframework.org/docs/overview
-  * Docs: https://hexdocs.pm/phoenix
-  * Mailing list: http://groups.google.com/group/phoenix-talk
-  * Source: https://github.com/phoenixframework/phoenix
+2. Deploy the app to production
+* `nanobox deploy`

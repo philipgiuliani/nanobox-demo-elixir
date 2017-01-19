@@ -1,3 +1,6 @@
+# MacOS
+.DS_Store
+
 # App artifacts
 /_build
 /db
@@ -6,3 +9,6 @@
 
 # Generated on crash by the VM
 erl_crash.dump
+
+# Releases
+/release

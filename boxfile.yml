@@ -8,5 +8,10 @@ run.config:
   extra_steps:
     - mix archive.install https://github.com/phoenixframework/archives/raw/master/phoenix_new.ez --force
 
+web.main:
+  start: release/bin/demo foreground
+  writable_dirs:
+    - release
+
 data.db:
   image: nanobox/postgresql:9.5
